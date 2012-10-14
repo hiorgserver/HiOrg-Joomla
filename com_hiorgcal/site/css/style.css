@@ -1,0 +1,65 @@
+/* 
+    Document   : style
+    Created on : 03.08.2012, 14:21:05
+    Author     : Markus
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#hiorgcal_map {
+    float: right;
+    
+}
+
+.hiorgcal_event_details h2 {
+    margin:0;
+    
+}
+.hiorgcal_event_details p {
+    margin-left: 1em;
+    line-height: 100%;
+    margin-top: 0;
+}
+
+.hiorgcal_maps_link
+{
+    display: inline !important;
+}
+
+
+
+#hiorgcal {
+    border: 0 none;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#hiorgcal a {
+    color: #000000;
+    text-decoration: none;
+}
+#hiorgcal img {
+    padding-left: 4px;
+}
+#hiorgcal thead tr th {
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    font-weight: bold;
+    padding: 6px;
+    text-align: left;
+}
+#hiorgcal tbody tr td {
+    border-bottom: 1px solid #CCCCCC;
+    line-height: 160%;
+    text-align: left;
+}
+#hiorgcal tbody tr:hover, #hiorgcal tbody tr:focus {
+    background-color: #EEEEEE;
+}
+#hiorgcal tbody tr td a, #hiorgcal tbody tr td span {
+    display: block;
+    padding: 6px;
+}
