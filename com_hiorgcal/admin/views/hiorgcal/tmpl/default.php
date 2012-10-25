@@ -19,4 +19,7 @@ JHtml::_('behavior.tooltip');
 		<?php echo JHtml::_('form.token'); ?>
 	</div>
 </form>
+<div>
+Wenn Sie die Entwicklung dieser Komponente unterstützen wollen, forken Sie <a href="https://github.com/hiorgserver/HiOrg-Joomla">https://github.com/hiorgserver/HiOrg-Joomla</a> und senden uns einen Pull-Request!
+</div>
 

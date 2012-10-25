@@ -33,10 +33,9 @@ class HiOrgCalViewHiOrgCal extends JView
 		
                 $this->form = $form;
                 
-
                 JFactory::getDocument()->setTitle(JText::_('HiOrgCal - Konfiguration'));
                 JToolBarHelper::save();
-                JToolBarHelper::title("HiOrgCal Konfiguration");
+                JToolBarHelper::title("HiOrgCal Konfiguration", "hiorgcal48.png");
  
 		// Display the template
 		parent::display($tpl);
