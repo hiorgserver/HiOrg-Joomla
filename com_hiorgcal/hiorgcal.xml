@@ -6,9 +6,9 @@
 	<authorEmail>info@hiorg-server.de</authorEmail>
 	<authorUrl>http://www.hiorg-server.de</authorUrl>
 	<copyright>2012 - All Rights Reserved.</copyright>
-	<license></license>
-	<version>0.0.11</version>
-	<description>HiOrgCal - Version 0.0.11</description>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>0.0.12</version>
+	<description>HiOrgCal - Version 0.0.12</description>
  
 	<install> <!-- Runs on install -->
 		<sql>

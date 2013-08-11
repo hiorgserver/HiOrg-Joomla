@@ -1,17 +1,13 @@
 <?php
-
 /**
- * @version		$Id: controller.php 46 2010-11-21 17:27:33Z chdemko $
- * @package		Joomla16.Tutorials
- * @subpackage	Components
- * @copyright	Copyright (C) 2005 - 2010 Open Source Matters, Inc. All rights reserved.
- * @author		Christophe Demko
- * @link		http://joomlacode.org/gf/project/helloworld_1_6/
- * @license		License GNU General Public License version 2 or later
+ * @subpackage          Components
+ * @copyright           Copyright (C) 2005 - 2010 HiOrg Server GmbH All rights reserved.
+ * @author		HiOrg Server GmbH
+ * @license		GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 // No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+defined('_JEXEC') or die('Restrictedd access');
 
 // import Joomla controller library
 jimport('joomla.application.component.controllerform');
