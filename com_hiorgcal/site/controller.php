@@ -10,4 +10,7 @@ jimport('joomla.application.component.controller');
  */
 class HiOrgCalController extends JController
 {
+
+    
+    
 }

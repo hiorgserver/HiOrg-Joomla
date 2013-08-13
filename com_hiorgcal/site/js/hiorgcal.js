@@ -12,7 +12,7 @@ $(function() {
       } else {
           element.parent().animate({ borderBottomWidth: "1px" });
       }
-      
+      $("#hiorgcal").find(".hiorgcal_event_details").slideUp('slow');
       element.slideToggle('slow');
       
       

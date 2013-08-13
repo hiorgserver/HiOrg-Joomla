@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
        <property environment="env"/>
-       <property name="source" value="C:\xampp\htdocs\Joomla-HiOrg"/>
+       <property name="source" value="F:\xampp\htdocs\joomla"/>
        <property name="release" value="C:\Users\Markus\Documents\Arbeit\HiOrg\Releases"/>
        <property name="builddir" value="C:\TEMP"/>
        <property name="verbose" value="false"/>
@@ -98,6 +98,7 @@
                <touch file="${builddir}/${NAME}/index.html"/>
                <move file="${builddir}/${NAME}/admin/uninstall.${NAME}.php" todir="${builddir}/${NAME}" verbose="${verbose}" failonerror="false"/>
                <move file="${builddir}/${NAME}/admin/install.${NAME}.php" todir="${builddir}/${NAME}" verbose="${verbose}" failonerror="false"/>
+                <move file="${builddir}/${NAME}/admin/script.php" todir="${builddir}/${NAME}" verbose="${verbose}" failonerror="false"/>
                <move todir="${builddir}/${NAME}/admin/sql" verbose="${verbose}">
                        <fileset dir="${builddir}/${NAME}/admin">
                                <include name="*.sql"/>
