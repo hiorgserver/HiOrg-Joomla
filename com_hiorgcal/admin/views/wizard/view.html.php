@@ -14,7 +14,7 @@ jimport('joomla.application.component.view');
 /**
  * HiOrgCals View
  */
-class HiOrgCalViewHiOrgCal extends JView
+class HiOrgCalViewWizard extends JView
 {
 	/**
 	 * HiOrgCals view display method
@@ -26,8 +26,9 @@ class HiOrgCalViewHiOrgCal extends JView
 		
 		
                 $form = $this->get('form');
+                $dp = $this->get("dp");
+                $fopen = $this->get("fopen");
                 
- 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
 		{
@@ -38,11 +39,12 @@ class HiOrgCalViewHiOrgCal extends JView
 		
 		
                 $this->form = $form;
+                $this->dp = $dp;
+                $this->fopen = $fopen;
                 
-                
-                JFactory::getDocument()->setTitle(JText::_('HiOrgCal - Konfiguration'));
-                JToolBarHelper::save();
-                JToolBarHelper::title("HiOrgCal Konfiguration", "hiorgcal48.png");
+                JFactory::getDocument()->setTitle(JText::_('HiOrg-Server Integrationsassistent'));
+                JToolBarHelper::custom("wizard.next", "forward", "forward", "Weiter", false);
+                JToolBarHelper::title("HiOrg-Server Integrationsassistent", "hiorgcal48.png");
  
 		// Display the template
 		parent::display($tpl);

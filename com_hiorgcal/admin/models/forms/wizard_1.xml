@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+	
+        
+ <field name="myradiovalue" type="radio" default="0" label="Wählen sie die Installationsvariante" description="">
+  <option value="0">Nur die HiOrgCal-Komponente</option>
+  <option value="1">Nur in den DPCalendar integrieren (setzt eine Installation des DPCalendars vorraus)</option>
+  <option value="2">Beides (setzt eine Installation des DPCalendars vorraus)</option>
+</field>
+</fieldset>
+</form>
+

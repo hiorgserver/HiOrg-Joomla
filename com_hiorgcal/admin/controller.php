@@ -44,9 +44,9 @@ class HiOrgCalController extends JController
         public function save()
 	{
 		$var = JRequest::getVar('jform', array(), 'default', 'array');
-                $var2 = $this->getModel()->setConfig($var);
-                
+                $this->getModel()->setConfig($var);
 		$this->setRedirect(JURI::base().'index.php?option='.JRequest::getCmd('option'), JText::_('Konfiguration gesichert.'));
 	}
        
+
 }

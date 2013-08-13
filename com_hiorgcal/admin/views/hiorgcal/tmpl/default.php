@@ -28,4 +28,6 @@ JHtml::_('behavior.tooltip');
 <div>
 Wenn Sie die Entwicklung dieser Komponente unterstützen wollen, forken Sie <a href="https://github.com/hiorgserver/HiOrg-Joomla">https://github.com/hiorgserver/HiOrg-Joomla</a> und senden uns einen Pull-Request!
 </div>
-
+<div>
+<a href="?option=com_hiorgcal&view=wizard">Klicken sie hier</a> um den Installationsasisstenten erneut aufzurufen.
+</div>

@@ -3,7 +3,7 @@
 	<fieldset>
 		<field
 			name="url"
-			type="text"
+			type="hidden"
 			label="Alternative URL:"
 			description="Geben sie hier eine alternative URL an. Verwenden Sie diese Option nur, wenn sie eine spezielle Installation des HiOrg-Servers nutzen oder auf ein Proxy-Skript angewiesen sind."
 			size="60"
