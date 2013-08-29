@@ -22,7 +22,7 @@ Wählen sie dabei als "Menu Item Type" den Punkt "termine" in der Kategorie "hio
 <br>
 <h3>DPCalendar</h3>
 Der Asisstent hat das entsprechende Plugin für den DPCalendar bereits installiert und aktiviert.
-Unbnötigte Dateien wurden bereits entfernt.
+Unbenötigte Dateien wurden bereits entfernt.
 Sie müssen nun in der DPCalendar-Konfiguration ihre HiOrg-Server Termine in einen Kalender importieren.
 
     
