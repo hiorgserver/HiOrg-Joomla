@@ -9,6 +9,9 @@
 defined('_JEXEC') or die('Restricted access');
 JHtml::_('behavior.tooltip');
 
+if (JRequest::getString("setup") == "dp") {
+    $this->getModel("wizard")->removeYourself();
+}
 
 ?>
 <div style="font-size: 12px;">
@@ -19,14 +22,14 @@ Wählen sie dabei als "Menu Item Type" den Punkt "termine" in der Kategorie "hio
 <br>
 <h3>DPCalendar</h3>
 Der Asisstent hat das entsprechende Plugin für den DPCalendar bereits installiert und aktiviert.
+Unbnötigte Dateien wurden bereits entfernt.
 Sie müssen nun in der DPCalendar-Konfiguration ihre HiOrg-Server Termine in einen Kalender importieren.
-<br>
-<br>
-<br>
-Drücken sie auf Weiter um den Assistenten zu schließen.
+
     
 </div>
-<form action="<?php echo JRoute::_('index.php?option=com_hiorgcal'); ?>"
+<form action="<?php echo JRoute::_('index.php'); ?>"
             method="post" name="adminForm" id="wizard-form">
-    <input type="hidden" name="task" value="next.step3" />
+
+    <input type="hidden" name="from-step" value="3" />
+    <input style="float: right; font-size: 14px;" type="submit" value="Zurück zur Hauptseite" />
 </form>

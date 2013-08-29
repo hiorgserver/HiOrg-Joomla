@@ -35,11 +35,19 @@ class HiOrgCalControllerWizard extends JController {
                     JError::raiseError(453434, "Daten-Manipulation");    
                 break;
             }
-            
+      
             
         }
-        
-        
+              if(JRequest::getString("from-step") == "3") {
+                  
+                if (JRequest::getString("setup") == "dp" ) {
+                    $this->setRedirect(JURI::base().'index.php');
+                    $this->getModel("wizard")->removeYourself();
+                }
+                //$this->setRedirect(JURI::base().'index.php');
+                JError::raiseNotice(123, "HiOrg-Server Integration wurde abgeschlossen. Unbenötigte Pakete und Dateien wurden entfernt.");
+                
+            }
     parent::display();
     }   
         

@@ -43,7 +43,11 @@ class HiOrgCalViewWizard extends JView
                 $this->fopen = $fopen;
                 
                 JFactory::getDocument()->setTitle(JText::_('HiOrg-Server Integrationsassistent'));
+                if ($this->getLayout() != "step3"){
                 JToolBarHelper::custom("wizard.next", "forward", "forward", "Weiter", false);
+                } else {
+
+                }
                 JToolBarHelper::title("HiOrg-Server Integrationsassistent", "hiorgcal48.png");
  
 		// Display the template

@@ -43,7 +43,7 @@ class HiOrgCalModelWizard extends JModelAdmin
         
     
     public function getDp() {
-        return is_dir("./components/com_dpcalendar/");
+        return !is_dir("./components/com_dpcalendar/");
         
     }    
         
@@ -78,6 +78,7 @@ class HiOrgCalModelWizard extends JModelAdmin
         $installer =  new JInstaller();
         // Install the packages
         $installer->install(JPATH_BASE."/components/com_hiorgcal/plugin_install/");
+
     }
 
     
@@ -89,6 +90,13 @@ class HiOrgCalModelWizard extends JModelAdmin
         
     }
     
+    public function removeYourself() {
+        $table = $this->getTable("Extensions");
+        $table->load("com_hiorgcal");
+        $id = $table->get("extension_id");
+        $installer = new JInstaller();
+        $installer->uninstall("component", $id);
+    }
     
     
 }    
