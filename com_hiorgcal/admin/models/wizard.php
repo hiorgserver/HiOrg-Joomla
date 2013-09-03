@@ -43,7 +43,7 @@ class HiOrgCalModelWizard extends JModelAdmin
         
     
     public function getDp() {
-        return !is_dir("./components/com_dpcalendar/");
+        return is_dir("./components/com_dpcalendar/");
         
     }    
         
