@@ -2,17 +2,17 @@
 <extension version="1.6" type="plugin" group="dpcalendar"
 	method="upgrade">
 	<name>DPCalendar - HiOrg</name>
-	<author>HiOrg-Server GmbH</author>
+	<author>HiOrg Server GmbH</author>
 	<creationDate>Jun 2013</creationDate>
-	<copyright>(C) 2012 Digital Peak. All rights reserved.
+	<copyright>(C) 2013 HiOrg Server GmbH. All rights reserved.
 	</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html
 		GNU/GPL
 	</license>
-	<authorEmail>info@joomla.digital-peak.com</authorEmail>
-	<authorUrl>joomla.digital-peak.com</authorUrl>
+	<authorEmail>support@hiorg-server.de</authorEmail>
+	<authorUrl>info.hiorg-server.de</authorUrl>
 	<version>2.2.1</version>
-	<description>Plugin für den DPCalendar um bequem Termin-Daten aus dem HiOrg-Server zu importieren</description>
+	<description>Plugin für den DPCalendar, um bequem Termin-Daten aus dem HiOrg-Server zu importieren</description>
 	<files>
 		<filename plugin="dpcalendar_hiorg">dpcalendar_hiorg.php</filename>
 		<filename>index.html</filename>
@@ -25,10 +25,10 @@
 				<field name="spacer-1" type="spacer" default="" label="HiOrg-Server Kalender"
 					description="HiOrg-Server Kalender" />
 				<field name="title-1" type="text" label="Titel des Kalenders"
-					description="Geben sie hier den Namen des Kalenders ein, in den sie automatisch Termine importeiren wollen." size="70" class="inputbox"
+					description="Geben Sie hier den Namen des Kalenders ein, in den Sie automatisch Termine importieren wollen." size="70" class="inputbox"
 					default="HiOrg" />
 				<field name="ov-1" type="text"
-					label="OV:" description="Geben sie hier ihr OV-Kürzel ein."
+					label="OV:" description="Geben sie hier Ihr Org.-Kürzel ein."
 					size="5" class="inputbox" default="xxx" />
 				<field name="description-1" type="text" label="Beschreibung"
 					description="Beschreibung des Kalenders" size="70" class="inputbox"
@@ -39,10 +39,10 @@
 
 			</fieldset>
 			<fieldset name="advanced" label="Technische Einstellungen">
-                                <field name="spacer-1" type="spacer" default="" label="Achtung! Nehmen Sie nur Änderungen an diesen Einstellugen vor, wenn sie wissen was Sie tun."
+                                <field name="spacer-1" type="spacer" default="" label="Achtung! Nehmen Sie nur Änderungen an diesen Einstellugen vor, wenn Sie wissen was Sie tun."
 					description="" />
 				<field name="integration" type="list" default="0"
-					label="Synchronisierungsart" description="Stellen sie ein wie die Synchronisierung ablaufen soll.">
+					label="Synchronisierungsart" description="Stellen Sie ein wie die Synchronisierung ablaufen soll.">
 					<option value="0">Beides</option>
 					<option value="1">Nur Importieren
 					</option>
@@ -58,7 +58,7 @@
 					</option>
 				</field>
 				<field name="cache_time" type="text" default="900"
-					label="Cache-Ablaufzeit" description="Geben Sie hier die Zeit ein, in der der Cache ablaufen soll." />
+					label="Cache-Ablaufzeit" description="Geben Sie hier die Zeit ein, nach welcher der Cache ablaufen soll." />
 			</fieldset>
 		</fields>
 	</config>

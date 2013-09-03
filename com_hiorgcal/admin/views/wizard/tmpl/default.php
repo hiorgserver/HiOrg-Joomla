@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage          Components
- * @copyright           Copyright (C) 2005 - 2010 HiOrg Server GmbH All rights reserved.
+ * @copyright           Copyright (C) 2005 - 2013 HiOrg Server GmbH All rights reserved.
  * @author		HiOrg Server GmbH
  * @license		GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -33,12 +33,12 @@ if ($this->fopen && $this->dp) {
 }
 
 if ($this->fopen && !$this->dp) {
-    $text = "Sie können mit der Einrichtung fortfahren. Wenn sie ihre HiOrg-Server Termine in den DPCalendar importieren möchten, installieren sie diesen und rufen diesen Assistenten erneut auf.";
+    $text = "Sie können mit der Einrichtung fortfahren. Wenn Sie Ihre HiOrg-Server Termine in den DPCalendar importieren möchten, installieren Sie zunächst DPCalendar, und rufen danach diesen Assistenten erneut auf.";
 }
 
 if (!$this->fopen) {
     
-    $text = "Leider gibt es ein Problem. Da allow_url_fopen auf ihrem System nicht aktiv ist, ist unsere Komponente nicht funtionsfähig. Bitten Sie ihren Webhoster bzw. System-Administrator um die Aktivierung dieser PHP-Option.";
+    $text = "Leider gibt es ein Problem. Da allow_url_fopen in Ihren PHP-Einstellungen deaktiviert ist, ist unsere Komponente nicht funtionsfähig. Bitten Sie Ihren Webhoster bzw. System-Administrator um die Aktivierung dieser PHP-Option.";
     $continue = "no";
     
 }

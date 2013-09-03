@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage          Components
- * @copyright           Copyright (C) 2005 - 2010 HiOrg Server GmbH All rights reserved.
+ * @copyright           Copyright (C) 2005 - 2013 HiOrg Server GmbH All rights reserved.
  * @author		HiOrg Server GmbH
  * @license		GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -23,7 +23,7 @@ JHtml::_('behavior.tooltip');
 		<h3>Installationsvariante</h3>
                 <div style="font-size: 12px;">
                     
-                Wie möchten sie die Termine vom HiOrg-Server in ihre Joomla-Installation integrieren?
+                Wie möchten Sie die Termine vom HiOrg-Server in Ihre Joomla-Webseite integrieren?
                 <ul style="list-style: none;">
                     <li><input type="radio" name="setup" checked="true" value="hiorgcal">Nur den HiOrg-Kalender installieren</li>
                     <li><input type="radio" name="setup" value="dp">Nur in den DPCalendar integrieren</li>
