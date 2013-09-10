@@ -6,7 +6,7 @@ class HiOrgCalControllerWizard extends JController {
         //$var = JRequest::getVar('jform', array(), 'default', 'array');
         if (JRequest::getString("cancontinue") == "no") {
             $this->setRedirect(JURI::base().'index.php?option='.JRequest::getCmd('option').'&view=wizard');
-            JError::raiseWarning(413444, "Fehler: Voraussetzungen werden nicht erfüllt.");
+            JError::raiseWarning(413444, "Fehler: Vorraussetzungen werden nicht erfüllt.");
         }
 
         if(JRequest::getString("from-step") == "2") {
@@ -21,7 +21,6 @@ class HiOrgCalControllerWizard extends JController {
                 $this->getModel("wizard")->installPlugin();    
                 $this->getModel("wizard")->setDpCalConfig($ov);
                 $this->getModel("wizard")->enablePlugin();
-                break;
                 }
                 case "both": {
                 $this->getModel("wizard")->installPlugin(); 

@@ -2,7 +2,7 @@
 /**
  * @package		DPCalendarHiorg
  * @author		Digital Peak http://www.digital-peak.com
- * @copyright           Copyright (C) 2012 Digital Peak, Inc. All rights reserved.
+ * @copyright	Copyright (C) 2012 Digital Peak, Inc. All rights reserved.
  * @license		http://www.gnu.org/licenses/gpl.html GNU/GPL
  */
 
@@ -10,16 +10,18 @@ defined('_JEXEC') or die();
 
 require_once (JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dpcalendar'.DS.'helpers'.DS.'plugin.php');
 
-require_once(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dpcalendar'.DS.'libraries'.DS.'ical'.DS.'iCalcreator.class.php');
+require_once(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dpcalendar'.DS.'libraries'.DS.'ical'.DS.'iCalcreator.class.php ');
 
 class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
     
     
         protected $hiorg_url = "http://www.hiorg-server.de/termine.php?ical=1";
 
-	protected $identifier = 'i';
+	protected $identifier = 'h';
 
 	public function fetchEvent($eventId, $calendarId) {
+            //echo "fetchEvent";
+            //die();
 		$parts = explode('_', $eventId);
 		if(empty($parts)) {
 			return null;
@@ -44,6 +46,7 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 	}
 
 	public function fetchEvents($calendarId, JDate $startDate = null, JDate $endDate = null , JRegistry $options) {
+            //echo "FetchEvents";
 		$params = $this->params;
 
 		$v = new vcalendar(array('unique_id' => 'DPCalendar'));
@@ -164,25 +167,30 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 	}
 
 	public function fetchCalendars($calendarIds = null) {
-		$calendars = array();
+	//echo "fetchCalendars";	
+            $calendars = array();
 		//for ($i = 1; $i < 11; $i++) {
-			if(!empty($calendarIds) && !in_array($i, $calendarIds)) {
+			/*if(!empty($calendarIds) && !in_array($i, $calendarIds)) {
 				continue;
-			}
+			}*/
 			$uri = $this->hiorg_url."&ov=".$this->params->get('ov-1', null);
-                        //echo $uri;
+                        
 
 			$title = $this->params->get('title-1', null);
-			if(empty($uri) || empty($title)) {
+			/*if(empty($uri) || empty($title)) {
 				continue;
-			}
+			}*/
 			$calendars[] = $this->createCalendar(1, $title, $this->params->get('description-1', ''), $this->params->get('color-1', 'A32929'));
 		//}
-		return $calendars;
+	//	        var_dump($calendars);
+        //                echo $uri;
+                        return $calendars;
+                
 	}
 
 	protected function getContent($calendarId) {
-		$uri = $this->params->get('uri-'.$calendarId, '');
+                //echo "getContent";
+                $uri = $this->hiorg_url."&ov=".$this->params->get('ov-1', null);
 		return DPCalendarHelper::fetchContent($uri);
 	}
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5.0" method="upgrade">
 	<name>HiOrgCal</name>
-	<creationDate>August 2013</creationDate>
+	<creationDate>July 2012</creationDate>
 	<author>HiOrg Server GmbH</author>
-	<authorEmail>support@hiorg-server.de</authorEmail>
+	<authorEmail>info@hiorg-server.de</authorEmail>
 	<authorUrl>http://www.hiorg-server.de</authorUrl>
-	<copyright>2013 HiOrg Server GmbH - All Rights Reserved.</copyright>
+	<copyright>2012 - All Rights Reserved.</copyright>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
 	<version>0.0.12</version>
 	<description>HiOrgCal - Version 0.0.12</description>

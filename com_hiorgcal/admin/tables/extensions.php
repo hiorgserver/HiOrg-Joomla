@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage          Components
- * @copyright           Copyright (C) 2005 - 2013 HiOrg Server GmbH All rights reserved.
+ * @copyright           Copyright (C) 2005 - 2010 HiOrg Server GmbH All rights reserved.
  * @author		HiOrg Server GmbH
  * @license		GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
