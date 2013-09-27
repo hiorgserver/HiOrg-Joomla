@@ -8,10 +8,10 @@
 
 defined('_JEXEC') or die();
 
-require_once (JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dpcalendar'.DS.'helpers'.DS.'plugin.php');
-
-require_once(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_dpcalendar'.DS.'libraries'.DS.'ical'.DS.'iCalcreator.class.php ');
-
+JLoader::import('components.com_dpcalendar.libraries.dpcalendar.plugin', JPATH_ADMINISTRATOR);
+if (! class_exists('DPCalendarPlugin')) {
+    return;
+}
 class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
     
     
