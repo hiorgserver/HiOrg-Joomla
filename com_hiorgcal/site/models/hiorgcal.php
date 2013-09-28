@@ -50,6 +50,30 @@ class HiOrgCalModelHiOrgCal extends JModelItem
 	 * @return string The message to be displayed to the user
 	 */
         
+        /**
+         * Gibt Daten eines GET-Requests an die als Parameter übergebene URL zurück.
+         * 
+         * @param type $url
+         */
+        private function httpReq($url) {
+            		$options = new JRegistry();
+                         foreach ( array('curl', 'socket', 'stream') as $adapter ) {
+				try {
+					$class = 'JHttpTransport' . ucfirst($adapter);
+					$http = new JHttp($options, new $class($options));
+					$content = $http->get($url)->body;
+					break;
+				} catch ( RuntimeException $e ) {
+                                    return "";
+                                }
+			}
+            if (!empty($content)) {
+                return $content;
+            }
+            return "";
+            
+        }
+        
         
         private function getConfig() {
             
@@ -108,9 +132,9 @@ class HiOrgCalModelHiOrgCal extends JModelItem
         private function helper_getJson() { 
             if ($this->stringContains($this->json_config["url"], "?")) { $this->json_config["url"].="&"; }
             else { $this->json_config["url"].="?"; }
-            if ($stream = @fopen($this->json_config["url"]. "ov=" .$this->json_config["ov"], 'r')) {
-                $http= stream_get_contents($stream);
-                fclose($stream);
+           
+           $url =  $this->json_config["url"]. "ov=" .$this->json_config["ov"];
+                $http = $this->httpReq($url);
                 $output = json_decode($http, true);
                 if ($output["success"]) {
                     $this->json = $output;
@@ -125,13 +149,9 @@ class HiOrgCalModelHiOrgCal extends JModelItem
                     
             } 
             
-            else {
-               
-                return false; //HTTP Fehler? ->False
-                
-            }
+     
 
-        }
+        
         
         public function isEndReached() {
            if ($this->json_pointer > $this->json_pointer_max) {

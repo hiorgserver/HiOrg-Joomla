@@ -27,7 +27,7 @@ class HiOrgCalViewWizard extends JView
 		
                 $form = $this->get('form');
                 $dp = $this->get("dp");
-                $fopen = $this->get("fopen");
+                $fopen = $this->get("URLSupport");
                 
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 

@@ -15,37 +15,57 @@ if (! class_exists('DPCalendarPlugin')) {
 class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
     
     
-        protected $hiorg_url = "http://www.hiorg-server.de/termine.php?ical=1";
+        protected $hiorg_url = "https://www.hiorg-server.de/termine.php?ical=1";
 
 	protected $identifier = 'h';
-
+        
+        /*
+        public function fetchEvent($eventId, $calendarId) {
+            
+            parent::fetchEvent($eventId, $calendarId);
+        }
+        
+        public function onEventFetch($eventId) {
+            $this->fetchEvent($eventId, 1);
+            //die("2");
+            //parent::onEventFetch($eventId);
+        }
+        public function onEventsFetch($calendarId, \JDate $startDate = null, \JDate $endDate = null, \JRegistry $options = null) {
+            //die("3");
+            parent::onEventsFetch($calendarId, $startDate, $endDate, $options);
+        }
+        
+        public function fetchEvents($calendarId, \JDate $startDate = null, \JDate $endDate = null, \JRegistry $options) {
+            //Geht!
+            $out = parent::fetchEvents($calendarId, $startDate, $endDate, $options);
+            //var_dump($out);
+            return $out;
+            //die("4");
+        }
+ 
+     
 	public function fetchEvent($eventId, $calendarId) {
-            //echo "fetchEvent";
-            //die();
-		$parts = explode('_', $eventId);
-		if(empty($parts)) {
-			return null;
-		}
-		$s = $parts[count($parts) - 1];
-		$start = null;
-		if(strlen($s) == 8) {
-			$start = JFactory::getDate(substr($s, 0, 4).'-'.substr($s, 4, 2).'-'.substr($s, 6, 2).' 00:00');
-		} else {
-			$start = JFactory::getDate(substr($s, 0, 4).'-'.substr($s, 4, 2).'-'.substr($s, 6, 2).' '.substr($s, 8, 2).':'.substr($s, 10, 2));
-		}
-		$end = clone $start;
-		$end->modify('+1 day');
+        $pos = strrpos($eventId, '_');
+        if ($pos === false) {
+            return null;
+        }
+        $s = substr($eventId, $pos + 1);
 
-		$tmpEvent = $this->createEvent($eventId, $calendarId);
-		foreach ($this->fetchEvents($calendarId, $start, $end, new JRegistry()) as $event) {
-			if($event->id == $tmpEvent->id) {
-				return $event;
-			}
-		}
-		return null;
+            $uid = substr($eventId, 0, $pos);
+            $c = new vcalendar(array('unique_id' => 'DPCalendar'));
+            $c->parse($this->getContent());
+
+            while ( $event = $c->getComponent('vevent') ) {
+                if ($event->getProperty('uid') != $uid) {
+                    continue;
+                }
+                return $this->createEventFromIcal($event, $calendarId);
+            }
+
 	}
-
-	public function fetchEvents($calendarId, JDate $startDate = null, JDate $endDate = null , JRegistry $options) {
+        */
+        /*
+	public function fetchEventss($calendarId, JDate $startDate = null, JDate $endDate = null , JRegistry $options) {
             //echo "FetchEvents";
 		$params = $this->params;
 
@@ -165,32 +185,34 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 		}
 		return $events;
 	}
-
-	public function fetchCalendars($calendarIds = null) {
-	//echo "fetchCalendars";	
+        */
+        
+        
+	public function fetchCalendars() {	
             $calendars = array();
-		//for ($i = 1; $i < 11; $i++) {
-			/*if(!empty($calendarIds) && !in_array($i, $calendarIds)) {
-				continue;
-			}*/
-			$uri = $this->hiorg_url."&ov=".$this->params->get('ov-1', null);
-                        
-
-			$title = $this->params->get('title-1', null);
-			/*if(empty($uri) || empty($title)) {
-				continue;
-			}*/
-			$calendars[] = $this->createCalendar(1, $title, $this->params->get('description-1', ''), $this->params->get('color-1', 'A32929'));
-		//}
-	//	        var_dump($calendars);
-        //                echo $uri;
-                        return $calendars;
+	    $title = $this->params->get('title-1', null);
+            $calendars[] = $this->createCalendar(1, $title, $this->params->get('description-1', ''), $this->params->get('color-1', 'A32929'));
+            
+            //var_dump($calendars);
+            return $calendars;
                 
 	}
+        
+        
+        
+       protected function getContent($calendarId, JDate $startDate = null, JDate $endDate = null, JRegistry $options) {
+        $uri = $this->hiorg_url."&ov=".$this->params->get('ov-1', null);
+        $content = DPCalendarHelper::fetchContent(str_replace('webcal://', 'https://', $uri));
 
-	protected function getContent($calendarId) {
-                //echo "getContent";
-                $uri = $this->hiorg_url."&ov=".$this->params->get('ov-1', null);
-		return DPCalendarHelper::fetchContent($uri);
-	}
+        $content = str_replace("BEGIN:VCALENDAR\r\n", '', $content);
+        $content = str_replace("\r\nEND:VCALENDAR", '', $content);
+
+        return "BEGIN:VCALENDAR\r\n" . $content . "\r\nEND:VCALENDAR";
+    }
+    
+        public function onCalendarsFetch($calendarIds = null, $type = null) {
+            //parent::onCalendarsFetch($calendarIds, $type);
+            return $this->fetchCalendars();
+        }
+       
 }

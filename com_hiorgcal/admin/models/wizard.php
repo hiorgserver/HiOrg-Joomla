@@ -52,6 +52,29 @@ class HiOrgCalModelWizard extends JModelAdmin
 
     }
     
+    public function getURLSupport() {
+
+          $options = new JRegistry();
+                         foreach ( array('curl', 'socket', 'stream') as $adapter ) {
+				try {
+					$class = 'JHttpTransport' . ucfirst($adapter);
+					$http = new JHttp($options, new $class($options));
+					$content = @$http->get("http://www.hiorg-server.de/plugin-test.php")->headers;
+					break;
+				} catch ( RuntimeException $e ) {
+                                
+                                    
+                                }
+			}
+                 
+            if (!empty($content)) {
+                return true;
+            }
+            return false;
+            
+        }
+
+    
     public function setHiOrgCalConfig($ov) {
             $table = $this->getTable();
             $table->load("1");

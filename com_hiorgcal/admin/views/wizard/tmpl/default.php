@@ -38,7 +38,7 @@ if ($this->fopen && !$this->dp) {
 
 if (!$this->fopen) {
     
-    $text = "Leider gibt es ein Problem. Da allow_url_fopen auf ihrem System nicht aktiv ist, ist unsere Komponente nicht funtionsfähig. Bitten Sie ihren Webhoster bzw. System-Administrator um die Aktivierung dieser PHP-Option.";
+    $text = "Es konnte keine Verbindung zum HiOrg-Server hersgestellt werden. Ihre Konfiguration lässt keine Zugriffe auf externe Ressourcen zu. Bitte wenden Sie sich an ihren Webhoster.";
     $continue = "no";
     
 }
@@ -48,7 +48,7 @@ if (!$this->fopen) {
 Willkommen zum HiOrg-Server Integrations-Assistenten.<br>
 <h3>Vorraussetzungen</h3>
 <ul>
-    <li>allow_url_fopen <?php echo $fopen ?> </li>
+    <li>Verbindung zum HiOrg-Server <?php echo $fopen ?> </li>
     <li>DPCalendar <?php echo $dp; ?> </li>
 </ul>
 <?php echo $text ?>
