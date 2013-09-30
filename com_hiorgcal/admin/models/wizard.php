@@ -55,7 +55,7 @@ class HiOrgCalModelWizard extends JModelAdmin
 				try {
 					$class = 'JHttpTransport' . ucfirst($adapter);
 					$http = new JHttp($options, new $class($options));
-					$content = @$http->get("http://www.hiorg-server.de/plugin-test.php")->headers;
+					$content = @$http->get("http://www.hiorg-server.de/termine.php?ov=xxx&ical=1")->body;
 					break;
 				} catch ( RuntimeException $e ) {
                                 
@@ -63,7 +63,7 @@ class HiOrgCalModelWizard extends JModelAdmin
                                 }
 			}
                  
-            if (!empty($content)) {
+            if (!(strpos($content, "VCALENDAR") === FALSE)) {
                 return true;
             }
             return false;

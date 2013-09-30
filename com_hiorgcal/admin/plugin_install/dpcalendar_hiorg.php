@@ -194,6 +194,13 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 
         $content = str_replace("BEGIN:VCALENDAR\r\n", '', $content);
         $content = str_replace("\r\nEND:VCALENDAR", '', $content);
+        $this->str_replace_broken_html("&Auml\;", 'Ä', $content);
+        $this->str_replace_broken_html("&auml\;", 'ä', $content);
+        $this->str_replace_broken_html("&Ouml\;", 'Ö', $content);
+        $this->str_replace_broken_html("&ouml\;", 'ö', $content);
+        $this->str_replace_broken_html("&Uuml\;", 'Ü', $content);
+        $this->str_replace_broken_html("&uuml\;", 'ü', $content);
+        $this->str_replace_broken_html("\\n", "<br>", $content);
 
         return "BEGIN:VCALENDAR\r\n" . $content . "\r\nEND:VCALENDAR";
     }
@@ -222,5 +229,28 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 		(JRequest::getVar('task', null) == 'add' && $bool /*|| (JRequest::getVar('view', null) == 'tools' && JRequest::getVar('layout', null) == 'import')*/);
 	}
         
+        /**
+         * Findet Vorkommen von $needle in $haystack und ersetzt diese druch $repl, auch wenn $needle durch Zeilenumbrüche getrennt ist.
+         * 
+         * @param type $needle
+         * @param type $repl
+         * @param type $haystack
+         */
+        private function str_replace_broken_html($needle, $repl, &$haystack) {
+    
+        $haystack = str_replace($needle, $repl, $haystack);
+        for ($index = 1; $index < strlen($needle); $index++) {
+        $temp=substr($needle, 0, $index);
+        $temp=$temp."\r\n  ";
+        $temp2 = substr($needle, $index);
+        $temp = $temp.$temp2;
+        $haystack = str_replace($temp, $repl, $haystack);
+   
+         }
+    
+    
+    
+}
+
     
 }
