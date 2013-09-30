@@ -25,9 +25,9 @@ JHtml::_('behavior.tooltip');
                     
                 Wie möchten sie die Termine vom HiOrg-Server in ihre Joomla-Installation integrieren?
                 <ul style="list-style: none;">
-                    <li><input type="radio" name="setup" checked="true" value="hiorgcal">Nur den HiOrg-Kalender installieren</li>
+                    <li><input type="radio" name="setup"  value="hiorgcal">Nur den HiOrg-Kalender installieren</li>
                     <li><input type="radio" name="setup" value="dp">Nur in den DPCalendar integrieren</li>
-                    <li><input type="radio" name="setup" value="both">Beides</li>
+                    <li><input type="radio" name="setup" checked="true" value="both">Beides</li>
                 <input type="hidden" name="from-step" value="1" />
 		<input type="hidden" name="task" value="wizard.next" />
                 

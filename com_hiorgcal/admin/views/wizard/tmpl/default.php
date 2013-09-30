@@ -12,28 +12,28 @@ JHtml::_('behavior.tooltip');
 $dp_avail = "";
 $continue = "";
 if ($this->dp) {
-    $dp = '<span class="icon-16-allowed"></span>';
+    $dp = '<img src="./components/com_hiorgcal/icons/icon-16-allow.png">';
     
 } else {
-    $dp = '<span class="icon-16-denied">Es ist kein DPCalendar installiert.</span>';
+    $dp = '<img src="./components/com_hiorgcal/icons/icon-16-deny.png"> Es ist kein DPCalendar installiert';
     
 }
 
 if ($this->fopen) {
-    $fopen = '<span class="icon-16-allowed"></span>';
+    $fopen = '<img src="./components/com_hiorgcal/icons/icon-16-allow.png">';
     
 } else {
-    $fopen = '<span class="icon-16-denied"></span>';
+    $fopen = '<img src="./components/com_hiorgcal/icons/icon-16-deny.png">';
     
 }
 
 if ($this->fopen && $this->dp) {
-    $text = "Sie können mit der Einrichtung fortfahren.";
+    $text = "Sie können mit der Einrichtung fortfahren: Klicken Sie dazu ganz rechts oben auf [Weiter].";
     $dp_avail = "yes";
 }
 
 if ($this->fopen && !$this->dp) {
-    $text = "Sie können mit der Einrichtung fortfahren. Wenn sie ihre HiOrg-Server Termine in den DPCalendar importieren möchten, installieren sie diesen und rufen diesen Assistenten erneut auf.";
+    $text = "Sie können mit der Einrichtung fortfahren: Klicken Sie dazu ganz rechts oben auf [Weiter]. Wenn sie ihre HiOrg-Server Termine in den DPCalendar importieren möchten, installieren sie diesen und rufen diesen Assistenten (über die Einstellungs-Seite) erneut auf. ";
 }
 
 if (!$this->fopen) {
