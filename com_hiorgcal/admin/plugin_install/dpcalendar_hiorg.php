@@ -19,17 +19,24 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 
 	protected $identifier = 'h';
         
+        
+        public function __construct(&$subject, $config = array()) {
+            if ($this->isImport()) {
+                JError::raiseError(500, "Das HiOrg-Plugin unterstuezt den Import nicht.");
+                die("Importing is not supported!.");
+            }
+            parent::__construct($subject, $config);
+        }
+        
         /*
         public function fetchEvent($eventId, $calendarId) {
             
             parent::fetchEvent($eventId, $calendarId);
         }
+        */
+
         
-        public function onEventFetch($eventId) {
-            $this->fetchEvent($eventId, 1);
-            //die("2");
-            //parent::onEventFetch($eventId);
-        }
+        /*
         public function onEventsFetch($calendarId, \JDate $startDate = null, \JDate $endDate = null, \JRegistry $options = null) {
             //die("3");
             parent::onEventsFetch($calendarId, $startDate, $endDate, $options);
@@ -43,27 +50,8 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
             //die("4");
         }
  
-     
-	public function fetchEvent($eventId, $calendarId) {
-        $pos = strrpos($eventId, '_');
-        if ($pos === false) {
-            return null;
-        }
-        $s = substr($eventId, $pos + 1);
-
-            $uid = substr($eventId, 0, $pos);
-            $c = new vcalendar(array('unique_id' => 'DPCalendar'));
-            $c->parse($this->getContent());
-
-            while ( $event = $c->getComponent('vevent') ) {
-                if ($event->getProperty('uid') != $uid) {
-                    continue;
-                }
-                return $this->createEventFromIcal($event, $calendarId);
-            }
-
-	}
         */
+        
         /*
 	public function fetchEventss($calendarId, JDate $startDate = null, JDate $endDate = null , JRegistry $options) {
             //echo "FetchEvents";
@@ -200,7 +188,7 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
         
         
         
-       protected function getContent($calendarId, JDate $startDate = null, JDate $endDate = null, JRegistry $options) {
+       protected function getContent() {
         $uri = $this->hiorg_url."&ov=".$this->params->get('ov-1', null);
         $content = DPCalendarHelper::fetchContent(str_replace('webcal://', 'https://', $uri));
 
@@ -209,10 +197,30 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
 
         return "BEGIN:VCALENDAR\r\n" . $content . "\r\nEND:VCALENDAR";
     }
-    
+    /*
         public function onCalendarsFetch($calendarIds = null, $type = null) {
             //parent::onCalendarsFetch($calendarIds, $type);
+            $this->loadLanguage();
             return $this->fetchCalendars();
         }
-       
+       */
+    
+    private function isImport() {
+        
+        $arr = JRequest::getVar("calendar", null);
+        $bool = false;
+        if (is_array($arr)) {
+        
+        foreach ($arr as $val) {
+            if (substr($val, 0,1) == "h") {
+                $bool = true;
+                break;
+            }
+        }
+        }
+		return JFactory::getApplication()->isAdmin() && JRequest::getVar('option', null) == 'com_dpcalendar' &&
+		(JRequest::getVar('task', null) == 'add' && $bool /*|| (JRequest::getVar('view', null) == 'tools' && JRequest::getVar('layout', null) == 'import')*/);
+	}
+        
+    
 }

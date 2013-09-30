@@ -48,7 +48,7 @@
 					<option value="2">Nur Anzeigen
 					</option>
 				</field>
-				<field name="cache" type="list" default="1"
+				<field name="cache" type="list" default="0"
 					label="Zwischenspeichern" description="">
 					<option value="2">Globale Einstellung übernehmen</option>
 					<option value="1">Immer

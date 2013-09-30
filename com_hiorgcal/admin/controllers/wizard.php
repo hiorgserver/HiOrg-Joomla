@@ -7,6 +7,7 @@ class HiOrgCalControllerWizard extends JController {
         if (JRequest::getString("cancontinue") == "no") {
             $this->setRedirect(JURI::base().'index.php?option='.JRequest::getCmd('option').'&view=wizard');
             JError::raiseWarning(413444, "Fehler: Vorraussetzungen werden nicht erfüllt.");
+            
         }
 
         if(JRequest::getString("from-step") == "2") {

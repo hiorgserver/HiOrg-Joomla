@@ -47,10 +47,6 @@ class HiOrgCalModelWizard extends JModelAdmin
         
     }    
         
-    public function getFopen() {
-        return (get_cfg_var("allow_url_fopen") == 1);
-
-    }
     
     public function getURLSupport() {
 

@@ -32,12 +32,10 @@ if (JRequest::getString("setup") == "dp" || JRequest::getString("setup") == "bot
 echo '
 <h3>DPCalendar</h3>
 Der Asisstent hat das entsprechende Plugin für den DPCalendar bereits installiert und aktiviert.
-Unbenötigte Dateien wurden bereits entfernt.
-Um ihre Termine anzuzeigen, haben sie nun 2 Möglichkeiten:
-<ul>
-<li>Fügen Sie einen DPCalendar <a href="?option=com_menus&view=items&menutype=top">Men&uuml;-Punkt</a> hinzu und wählen sie in den Optionen als Kalender "HiOrg" aus. Bei dieser Methode, werden die Termine direkt vom HiOrg-Server in den Kalendar geladen und es bedarf keiner manuellen Aktualisierung.</li> 
-<li>Sie können nun in der <a href="?option=com_dpcalendar&view=tools&layout=import">DPCalendar-Konfiguration</a> ihre HiOrg-Server Termine in einen Kalender importieren. Diese Alternative hat den Nachteil, dass sie den Kalender manuell aktualisieren müssen.</li>
-</ul>
+Unbenötigte Dateien wurden bereits entfernt.<br>
+<br>
+ <p>Fügen Sie einen DPCalendar <a href="?option=com_menus" target="_blank">Men&uuml;-Punkt</a> hinzu und wählen sie in den Optionen als Kalender "HiOrg" aus. <br> Bei dieser Methode werden die Termine direkt vom HiOrg-Server in den Kalender geladen und es bedarf keiner manuellen Aktualisierung.</p> 
+
 ';
 } ?>  
 
