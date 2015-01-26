@@ -22,7 +22,7 @@ class plgDPCalendarDPCalendar_Hiorg extends DPCalendarPlugin {
         public function __construct(&$subject, $config = array()) {
             if ($this->isImport()) {
                 JError::raiseError(500, "Das HiOrg-Plugin unterstuezt den Import nicht.");
-                die("Importing is not supported!.");
+                die("Importing is not supported and not needed in order for this plugin to operate correctly!. - Das Importieren wird nicht unterstuetzt und nicht benoetigt, damit dieses Plugin korrekt funktioniert.");
             }
             parent::__construct($subject, $config);
         }

@@ -22,3 +22,13 @@ gelöscht, um die Gefahr von Sicherheitslücken zu minimieren.
 
 Die aktuellste Version dieses Projekts finden Sie immer unter:  
 https://github.com/hiorgserver/HiOrg-Joomla
+
+----
+
+Joomla! 2.5
+===========
+
+Dieses Plugin arbeitet (im Legacy-Mode) mit Joomla! 3.x
+
+Wenn Sie noch Joomla! 2.5 einsetzen, wechseln Sie bitte den Branch auf: 
+"Joomla-2.5"

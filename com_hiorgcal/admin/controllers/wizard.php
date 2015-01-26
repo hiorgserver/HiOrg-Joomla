@@ -1,5 +1,5 @@
 <?php
-class HiOrgCalControllerWizard extends JController {
+class HiOrgCalControllerWizard extends JControllerLegacy {
 
     public function next() {
         

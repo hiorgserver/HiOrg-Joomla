@@ -18,7 +18,7 @@ $document->addStyleDeclaration('.icon-48-hiorgcal48 { background-image: url(../c
 jimport('joomla.application.component.controller');
  
 // Get an instance of the controller prefixed by HiOrgCal
-$controller = JController::getInstance('HiOrgCal');
+$controller = JControllerLegacy::getInstance('HiOrgCal');
  
 // Perform the Request task
 $input = JFactory::getApplication()->input;

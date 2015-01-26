@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
        <property environment="env"/>
-       <property name="source" value="F:\xampp\htdocs\joomla"/>
+       <property name="source" value="F:\xampp\htdocs\joomla3"/>
        <property name="release" value="C:\Users\Markus\Documents\Arbeit\HiOrg\Releases"/>
-       <property name="builddir" value="C:\TEMP"/>
+       <property name="builddir" value="F:\TEMP\joomla3\"/>
        <property name="verbose" value="false"/>
 
        <tstamp>
@@ -95,10 +95,10 @@
                        </fileset>
                </copy>
                <move file="${builddir}/${NAME}/admin/hiorgcal.xml" todir="${builddir}/${NAME}" verbose="${verbose}"/>
+               <move file="${builddir}/${NAME}/admin/script.php" todir="${builddir}/${NAME}" verbose="${verbose}"/>
                <touch file="${builddir}/${NAME}/index.html"/>
                <move file="${builddir}/${NAME}/admin/uninstall.${NAME}.php" todir="${builddir}/${NAME}" verbose="${verbose}" failonerror="false"/>
                <move file="${builddir}/${NAME}/admin/install.${NAME}.php" todir="${builddir}/${NAME}" verbose="${verbose}" failonerror="false"/>
-                <move file="${builddir}/${NAME}/admin/script.php" todir="${builddir}/${NAME}" verbose="${verbose}" failonerror="false"/>
                <move todir="${builddir}/${NAME}/admin/sql" verbose="${verbose}">
                        <fileset dir="${builddir}/${NAME}/admin">
                                <include name="*.sql"/>

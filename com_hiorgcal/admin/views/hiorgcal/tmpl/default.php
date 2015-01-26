@@ -11,7 +11,7 @@ JHtml::_('behavior.tooltip');
 
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_hiorgcal'); ?>"
-      method="post" name="adminForm" id="helloworld-form">
+      method="post" name="adminForm" id="adminForm">
 	<fieldset class="adminform">
 		<legend>Einstellungen HiOrg-Server</legend>
 		<ul class="adminformlist">

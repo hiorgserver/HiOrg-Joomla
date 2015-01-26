@@ -8,7 +8,7 @@ jimport('joomla.application.component.controller');
 /**
  * Hello World Component Controller
  */
-class HiOrgCalController extends JController
+class HiOrgCalController extends JControllerLegacy
 {
 
     

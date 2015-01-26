@@ -16,8 +16,8 @@ JHtml::_('behavior.tooltip');
 
 
 
-<form action="<?php echo JRoute::_('index.php?option=com_hiorgcal&view=wizard&layout=step2'); ?>"
-            method="post" name="adminForm" id="wizard-form">
+<form id="adminForm" action="<?php echo JRoute::_('index.php?option=com_hiorgcal&view=wizard&layout=step2'); ?>"
+            method="post" name="adminForm" >
 
 
 		<h3>Installationsvariante</h3>

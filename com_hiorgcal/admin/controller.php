@@ -15,7 +15,7 @@ jimport('joomla.application.component.controllerform');
 /**
  * General Controller of HiOrgCal component
  */
-class HiOrgCalController extends JController
+class HiOrgCalController extends JControllerLegacy
 {
 	/**
 	 * display task

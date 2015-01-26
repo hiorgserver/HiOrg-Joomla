@@ -14,7 +14,7 @@ jimport('joomla.application.component.view');
 /**
  * HiOrgCals View
  */
-class HiOrgCalViewWizard extends JView
+class HiOrgCalViewWizard extends JViewLegacy
 {
 	/**
 	 * HiOrgCals view display method

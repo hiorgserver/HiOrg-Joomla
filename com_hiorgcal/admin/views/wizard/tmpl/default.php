@@ -54,7 +54,7 @@ Willkommen zum HiOrg-Server Integrations-Assistenten.<br>
 <?php echo $text ?>
 </div style="font-size: 12px;">
 <form action="<?php if ($this->dp) { echo JRoute::_('index.php?option=com_hiorgcal&view=wizard&layout=step1'); } else { echo JRoute::_('index.php?option=com_hiorgcal&view=wizard&layout=step2');} ?>"
-            method="post" name="adminForm" id="wizard-form">
+            method="post" name="adminForm" id="adminForm">
     <input type="hidden" name="task" value="wizard.next" />
     <input type="hidden" name="from-step" value="0" />
     <input type="hidden" name="setup" value="<?php if (!$this->dp) { echo "hiorgcal"; } ?>" />
