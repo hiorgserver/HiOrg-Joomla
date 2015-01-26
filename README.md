@@ -28,7 +28,8 @@ https://github.com/hiorgserver/HiOrg-Joomla
 Joomla! 2.5
 ===========
 
-Dieses Plugin arbeitet (im Legacy-Mode) mit Joomla! 3.x
+Dieses Plugin arbeitet mit Joomla! 3.x (im Legacy-Mode)
 
 Wenn Sie noch Joomla! 2.5 einsetzen, wechseln Sie bitte den Branch auf: 
 "Joomla-2.5"
+https://github.com/hiorgserver/HiOrg-Joomla/tree/Joomla-2.5
