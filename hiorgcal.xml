@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>HiOrgCal</name>
+	<creationDate>October 2013</creationDate>
+	<author>HiOrg Server GmbH</author>
+	<authorEmail>info@hiorg-server.de</authorEmail>
+	<authorUrl>http://www.hiorg-server.de</authorUrl>
+	<copyright>2013 - All Rights Reserved.</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.0.0</version>
+	<description>HiOrgCal - Version 1.0.0</description>
+        
+        <scriptfile>script.php</scriptfile>
+	
+        <install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> <!-- Runs on update; New in 2.5 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+ 
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>hiorgcal.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+                <folder>js</folder>
+                <folder>img</folder>
+                <folder>css</folder>
+	</files>
+ 	<!-- <installfile>install.com_hiorgcal.php</installfile>
+        <uninstallfile>uninstall.com_hiorgcal.php</uninstallfile> -->
+        
+        
+
+	<administration>
+		<menu>HiOrgKalender</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>hiorgcal.php</filename>
+			<filename>controller.php</filename>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>models</folder>
+                        <folder>controllers</folder>
+                        <folder>plugin_install</folder>
+                        <folder>icons</folder>
+			<!-- views files section -->
+			<folder>views</folder>
+		</files>		
+	</administration>
+</extension>
