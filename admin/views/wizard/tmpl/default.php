@@ -1,7 +1,7 @@
 <?php
 /**
  * @subpackage          Components
- * @copyright           Copyright (C) 2005 - 2010 HiOrg Server GmbH All rights reserved.
+ * @copyright           Copyright (C) 2015 HiOrg Server GmbH All rights reserved.
  * @author		HiOrg Server GmbH
  * @license		GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -28,17 +28,17 @@ if ($this->fopen) {
 }
 
 if ($this->fopen && $this->dp) {
-    $text = "Sie können mit der Einrichtung fortfahren: Klicken Sie dazu ganz rechts oben auf [Weiter].";
+    $text = "Sie können mit der Einrichtung fortfahren: Klicken Sie dazu oben in der Toolbar auf [Weiter].";
     $dp_avail = "yes";
 }
 
 if ($this->fopen && !$this->dp) {
-    $text = "Sie können mit der Einrichtung fortfahren: Klicken Sie dazu ganz rechts oben auf [Weiter]. Wenn sie ihre HiOrg-Server Termine in den DPCalendar importieren möchten, installieren sie diesen und rufen diesen Assistenten (über die Einstellungs-Seite) erneut auf. ";
+    $text = "Sie können mit der Einrichtung fortfahren: Klicken Sie dazu oben in der Toolbar auf [Weiter].<br/>Wenn Sie Ihre HiOrg-Server Termine in den DPCalendar importieren möchten, installieren Sie zuerst DPCalendar, und rufen dann diesen Assistenten erneut auf (über die Einstellungs-Seite). ";
 }
 
 if (!$this->fopen) {
     
-    $text = "Es konnte keine Verbindung zum HiOrg-Server hersgestellt werden. Ihre Konfiguration lässt keine Zugriffe auf externe Ressourcen zu. Bitte wenden Sie sich an ihren Webhoster.";
+    $text = "Es konnte keine Verbindung zum HiOrg-Server hersgestellt werden. Ihre Konfiguration lässt keine Zugriffe auf externe Ressourcen zu. Bitte wenden Sie sich an Ihren Webhoster.";
     $continue = "no";
     
 }
@@ -46,13 +46,13 @@ if (!$this->fopen) {
 ?>
 <div style="font-size: 12px;">
 Willkommen zum HiOrg-Server Integrations-Assistenten.<br>
-<h3>Vorraussetzungen</h3>
+<h3>Voraussetzungen</h3>
 <ul>
     <li>Verbindung zum HiOrg-Server <?php echo $fopen ?> </li>
     <li>DPCalendar <?php echo $dp; ?> </li>
 </ul>
 <?php echo $text ?>
-</div style="font-size: 12px;">
+</div>
 <form action="<?php if ($this->dp) { echo JRoute::_('index.php?option=com_hiorgcal&view=wizard&layout=step1'); } else { echo JRoute::_('index.php?option=com_hiorgcal&view=wizard&layout=step2');} ?>"
             method="post" name="adminForm" id="adminForm">
     <input type="hidden" name="task" value="wizard.next" />

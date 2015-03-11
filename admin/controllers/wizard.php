@@ -6,7 +6,7 @@ class HiOrgCalControllerWizard extends JControllerLegacy {
         //$var = JRequest::getVar('jform', array(), 'default', 'array');
         if (JRequest::getString("cancontinue") == "no") {
             $this->setRedirect(JURI::base().'index.php?option='.JRequest::getCmd('option').'&view=wizard');
-            JError::raiseWarning(413444, "Fehler: Vorraussetzungen werden nicht erfüllt.");
+            JError::raiseWarning(413444, "Fehler: Voraussetzungen werden nicht erfüllt.");
             
         }
 
@@ -51,13 +51,7 @@ class HiOrgCalControllerWizard extends JControllerLegacy {
     parent::display();
     }   
         
-
-    
     
 }
 
 
-
-
-
-?>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="component" version="2.5.0" method="upgrade">
+<extension type="component" version="3.0" method="upgrade">
 	<name>HiOrgCal</name>
-	<creationDate>July 2014</creationDate>
+	<creationDate>March 2015</creationDate>
 	<author>HiOrg Server GmbH</author>
 	<authorEmail>info@hiorg-server.de</authorEmail>
 	<authorUrl>http://www.hiorg-server.de</authorUrl>
-	<copyright>2014 - All Rights Reserved.</copyright>
+	<copyright>2015 - All Rights Reserved.</copyright>
 	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-	<version>1.1.0</version>
-	<description>HiOrgCal - Version 1.1.0</description>
+	<version>1.2.0</version>
+	<description>HiOrgCal - Version 1.2.0</description>
         
         <scriptfile>script.php</scriptfile>
 	

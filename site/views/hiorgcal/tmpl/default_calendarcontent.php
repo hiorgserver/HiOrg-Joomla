@@ -23,6 +23,11 @@ $loc=urlencode($data["treff"].", ".$data["verort"]);
             <?php if (empty($data["treff"])) {echo "<!--";} ?><p>Treffpunkt/-zeit: <?php echo $data["treff"] ?> <a target="_blank" class="no-arrow hiorgcal_maps_link" href="http://maps.google.de/?q=<?php echo $loc ?>"><img src="components/com_hiorgcal/img/maps.png" /></a> </p><?php if (empty($data["treff"])) {echo "-->";} ?> 
             <?php if (empty($data["ansprech"])) {echo "<!--";} ?><p>Ansprechpartner: <?php echo $data["ansprech"] ?> </p><?php if (empty($data["ansprech"])) {echo "-->";} ?>
             <?php if (empty($data["bemerk"])) {echo "<!--";} ?><p>Bemerkung: <?php echo $data["bemerk"] ?> </p><?php if (empty($data["bemerk"])) {echo "-->";} ?>
+            <?php 
+            if($data["typ"]=="kurs") {
+                if (empty($data["link"])) {echo "<!--";} ?><p>Online-Anmeldung: <?php echo $data["link"] ?> </p><?php if (empty($data["link"])) {echo "-->";} 
+            }
+            ?>
         </div>
     </td>
                     
