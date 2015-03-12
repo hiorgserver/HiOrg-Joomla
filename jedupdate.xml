@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+    <update>
+        <name>HiOrgCal</name>
+        <description>Zeigt Termine aus dem HiOrg-Server an</description>
+        <element>HiOrgCal</element>
+        <type>component</type>
+        <version>1.2.0</version>
+        <client>site</client>
+        <infourl title="HiOrgCal">https://info.hiorg-server.de/infos/funktionen/joomla-extension/</infourl>
+        <downloads>
+            <downloadurl format="zip" type="full">https://github.com/hiorgserver/HiOrg-Joomla/archive/master.zip</downloadurl>
+        </downloads>
+        <maintainer>HiOrg Server GmbH</maintainer>
+        <maintainerurl>http://www.hiorg-server.de</maintainerurl>
+        <section>Updates</section>
+        <targetplatform version="3.0" name="joomla"/>
+    </update>
+</updates>

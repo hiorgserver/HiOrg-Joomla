@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jedupdate version="1">
+	<core_body>
+	Zeigt Termine aus HiOrg-Server an - wahlweise Standalone oder als Plugin für DPCalendar.
+
+        HiOrg-Server ist die führende Intranetlösung für Hilfsorganisationen im deutschsprachigen Raum. 
+	</core_body>
+	
+	<homepage_link>https://info.hiorg-server.de/infos/funktionen/joomla-extension/</homepage_link>
+	<download_link>https://github.com/hiorgserver/HiOrg-Joomla/archive/master.zip</download_link>
+	<documentation_link>https://github.com/hiorgserver/HiOrg-Joomla</documentation_link>
+	<support_link>https://info.hiorg-server.de/kontakt/</support_link>
+	<license_link>https://info.hiorg-server.de/impressum/</license_link>
+	
+	<version>1.2.0</version>
+
+	<compatibility>
+		<version>30</version>
+	</compatibility>
+</jedupdate>

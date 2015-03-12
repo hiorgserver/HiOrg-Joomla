@@ -10,6 +10,10 @@
 	<version>1.2.0</version>
 	<description>HiOrgCal - Version 1.2.0</description>
         
+        <updateservers>
+            <server type="extension" name="HiOrgCal Updates" priority="1">https://raw.githubusercontent.com/hiorgserver/HiOrg-Joomla/master/jedupdate.xml</server>
+        </updateservers>
+
         <scriptfile>script.php</scriptfile>
 	
         <install> <!-- Runs on install -->
@@ -41,8 +45,6 @@
  	<!-- <installfile>install.com_hiorgcal.php</installfile>
         <uninstallfile>uninstall.com_hiorgcal.php</uninstallfile> -->
         
-        
-
 	<administration>
 		<menu>HiOrgKalender</menu>
 		<files folder="admin">
