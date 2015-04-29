@@ -1,0 +1,3 @@
+[submodule "admin/plugin_install"]
+	path = admin/plugin_install
+	url = https://github.com/hiorgserver/HiOrg-Joomla-Plugin.git
