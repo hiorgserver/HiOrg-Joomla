@@ -12,7 +12,8 @@ selbstständig eine Terminliste sowie Termindetails an.
 
 2. Plugin für DPCalendar  
 Stellt eine Import-Schnittstelle zur Verfügung, so dass die Termine aus dem
-HiOrg-Server im DPCalendar angezeigt werden können.
+HiOrg-Server im DPCalendar angezeigt werden können.  
+Siehe auch: https://github.com/hiorgserver/HiOrg-Joomla-Plugin
 
 Mittels eines Installations-Assistenten kann die gewünschte Funktionsweise
 gewählt werden, evtl. nicht benötigte Komponenten werden danach automatisch
