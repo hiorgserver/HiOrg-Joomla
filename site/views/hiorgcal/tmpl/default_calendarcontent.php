@@ -6,7 +6,11 @@ defined('_JEXEC') or die('Restricted access');
 $data= $this->instance->getJson();
 $dmy_start = date("d.m.Y", $data["sortdate"]);
 $hi_start = date("H:i", $data["sortdate"]);
-$hi_end = date("H:i", $data["enddate"]);
+if(is_numeric($data["enddate"])) {
+    $hi_end = date("H:i", $data["enddate"]);
+} else {
+    $hi_end = "";
+}
 $loc=urlencode($data["treff"].", ".$data["verort"]);
 ?>
 <tr class="hiorgcal_class_entries_table">
