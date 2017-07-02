@@ -13,10 +13,9 @@ defined('_JEXEC') or die('Restricted access');
 <tbody>
 <?php 
 
-do {
+while(!$this->instance->isEndReached()) {
      echo $this->loadTemplate('calendarcontent');  
-} while(!$this->instance->isEndReached());
-
+} 
 
 ?>
 </tbody> 
