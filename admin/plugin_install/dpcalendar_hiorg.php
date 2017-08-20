@@ -10,7 +10,6 @@ defined('_JEXEC') or die();
 
 JLoader::import('components.com_dpcalendar.libraries.dpcalendar.plugin', JPATH_ADMINISTRATOR);
 if (! class_exists('DPCalendar\Plugin\DPCalendarPlugin')) {
-    die("errror");
     return;
 }
 
