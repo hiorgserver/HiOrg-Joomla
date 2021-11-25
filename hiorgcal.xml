@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.0" method="upgrade">
 	<name>HiOrgCal</name>
-	<creationDate>May 2015</creationDate>
+	<creationDate>November 2021</creationDate>
 	<author>HiOrg Server GmbH</author>
 	<authorEmail>info@hiorg-server.de</authorEmail>
 	<authorUrl>http://www.hiorg-server.de</authorUrl>
