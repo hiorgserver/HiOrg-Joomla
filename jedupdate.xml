@@ -5,7 +5,7 @@
         <description>Zeigt Termine aus dem HiOrg-Server an</description>
         <element>HiOrgCal</element>
         <type>component</type>
-        <version>1.2.1</version>
+        <version>1.2.3</version>
         <client>site</client>
         <infourl title="HiOrgCal">https://info.hiorg-server.de/infos/funktionen/joomla-extension/</infourl>
         <downloads>
