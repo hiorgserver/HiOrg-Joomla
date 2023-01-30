@@ -1,6 +1,14 @@
 HiOrg-Joomla
 ============
 
+## :warning: OUTDATED :warning:
+
+### Insgesamt verzeichnen wir eine sehr geringe Nutzung und Nachfrage dieses Plugins, daher wird es von der HiOrg Server GmbH derzeit nicht aktiv weiter entwickelt
+
+Community-Development und insbesondere Pull-Requests werden trotzdem gerne gesehen.
+
+-----
+
 Integration von Terminen aus dem HiOrg-Server in eine Joomla!-Website  
 http://www.hiorg-server.de
 
